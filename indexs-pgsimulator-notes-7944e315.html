@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pg模拟器 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f3f6;
+            color: #1e1f24;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrap {
+            max-width: 940px;
+            width: 100%;
+        }
+
+        /* hero 区域 — 开场短句 */
+        .hero {
+            margin-bottom: 2.2rem;
+            padding: 2.4rem 2rem;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03), 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid #e7e9ee;
+            text-align: center;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            color: #5b5e6b;
+            margin-bottom: 0.6rem;
+            font-weight: 450;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 540;
+            color: #12131a;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #4b4e5a;
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 1px solid #edeef2;
+            padding-top: 1rem;
+        }
+
+        /* 卡片分区 */
+        .card-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e4e6ec;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 530;
+            margin-bottom: 0.9rem;
+            color: #14151c;
+            border-left: 4px solid #8a8fa0;
+            padding-left: 0.9rem;
+        }
+
+        .card p {
+            margin-bottom: 0.7rem;
+            color: #2d2f38;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card a {
+            color: #2a4b7c;
+            text-decoration: none;
+            font-weight: 480;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .card a:hover {
+            border-bottom-color: #2a4b7c;
+        }
+
+        /* 特点列表（紧凑、信息密度高） */
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem 1.8rem;
+            margin-top: 0.6rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.3rem;
+            font-size: 0.96rem;
+            color: #2b2d37;
+            line-height: 1.5;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.1rem;
+            color: #7e8293;
+            font-weight: 600;
+        }
+
+        /* 温和结尾 */
+        .outro {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e4e6ec;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .outro p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #383b46;
+            font-size: 0.98rem;
+        }
+
+        .outro .meta-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #6f7383;
+            border-top: 1px solid #eceef2;
+            padding-top: 1rem;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 1.5rem 0 0.8rem;
+            color: #727687;
+            font-size: 0.82rem;
+            border-top: 1px solid #dde0e6;
+            margin-top: 0.6rem;
+        }
+
+        .footer a {
+            color: #58607a;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero {
+                padding: 1.6rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .feature-list {
+                grid-template-columns: 1fr;
+                gap: 0.4rem 0;
+            }
+            .card h2 {
+                font-size: 1.2rem;
+                padding-left: 0.6rem;
+            }
+        }
+
+        @media (min-width: 760px) {
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- hero 开场短句 -->
+    <div class="hero">
+        <div class="tagline">稳定的入口，清晰的说明</div>
+        <h1>pg模拟器 · 基础页面</h1>
+        <div class="sub">面向实用场景的轻量入口，围绕模拟器功能提供结构化的信息陈述。</div>
+    </div>
+
+    <!-- 承接段落 + 链接自然嵌入 -->
+    <div class="card-section">
+        <div class="card">
+            <h2>页面说明</h2>
+            <p>本页集中呈现与 <a href="https://indexs-pgsimulator.com">pg模拟器</a> 相关的核心描述与使用方向。内容围绕稳定可用、功能边界清晰两个原则组织，方便初次接触者快速了解基本轮廓，也适合已有经验的用户作为简明参考。</p>
+            <p>模拟器本身保持轻量定位，不依赖外部复杂运行时，主要聚焦于特定逻辑的模拟与结果反馈。下文所列为当前版本下比较有代表性的功能区域与设计思路。</p>
+        </div>
+
+        <!-- 特点列表（卡片内） -->
+        <div class="card">
+            <h2>主要特点</h2>
+            <ul class="feature-list">
+                <li>基于规则引擎，模拟过程可复现、可回溯</li>
+                <li>界面以信息展示为主，减少冗余交互层级</li>
+                <li>数据输入输出格式明确，便于对接外部工具</li>
+                <li>单页架构，加载后即可使用，无需频繁等待</li>
+                <li>常见场景预设，降低初始配置门槛</li>
+                <li>支持自定义参数，适应不同测试需求</li>
+            </ul>
+        </div>
+
+        <!-- 场景 / 提示 摘要式段落 -->
+        <div class="card">
+            <h2>适用场景提示</h2>
+            <p>日常开发调试、逻辑验证、教学演示以及小规模数据推演均为 <a href="https://indexs-pgsimulator.com">pg模拟器</a> 的典型使用范围。建议在需要快速验证假设或观察过程变化时优先考虑，不必每次都从头搭建完整环境。</p>
+            <p>对于高并发或超大规模数据模拟，建议根据实际负载情况评估工具边界；当前版本更侧重于单次模拟的完整性与结果可读性。</p>
+        </div>
+
+        <!-- FAQ 摘要 — 简短 2 条，不展开过多 -->
+        <div class="card">
+            <h2>常见疑问（摘要）</h2>
+            <p><strong>是否需要安装额外组件？</strong> 不需要。页面在浏览器中独立运行，不依赖本地数据库或后端服务，打开即可使用。</p>
+            <p><strong>模拟结果是否可以导出？</strong> 支持复制与下载，推荐使用文本格式保存，便于后续分析。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="outro">
+        <p>通过稳定入口与简洁说明，使每一次使用都有清晰的预期。<br>希望这份页面介绍能帮助您更高效地使用 <a href="https://indexs-pgsimulator.com">pg模拟器</a> 完成工作或学习中的模拟任务。</p>
+        <div class="meta-note">页面信息基于当前版本整理，后续更新请以实际页面为准。</div>
+    </div>
+
+    <div class="footer">
+        <span>内容参考 · <a href="https://indexs-pgsimulator.com">pg模拟器</a></span>
+    </div>
+</div>
+</body>
+</html>
