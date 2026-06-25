@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 2026 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1b2d3b;
+      padding: 0 1rem 3rem;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 横幅 hero */
+    .hero {
+      position: relative;
+      background: linear-gradient(145deg, #0d5e6b 0%, #148f9c 100%);
+      border-radius: 32px;
+      margin: 1.5rem 0 2.5rem;
+      padding: 2.8rem 2rem 3.2rem;
+      color: white;
+      box-shadow: 0 12px 28px rgba(8, 80, 88, 0.18);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      position: relative;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 560px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero .dot-grid {
+      display: flex;
+      gap: 0.5rem 0.8rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      opacity: 0.75;
+    }
+
+    .hero .dot-grid span::before {
+      content: '◆';
+      color: #b6e6ed;
+      margin-right: 6px;
+      font-size: 0.7rem;
+    }
+
+    /* 背景说明卡片 */
+    .bg-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2rem 1.8rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 10px 24px rgba(16, 88, 96, 0.06);
+      border-left: 5px solid #1d9aa8;
+    }
+
+    .bg-card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #07555f;
+      margin-bottom: 0.8rem;
+    }
+
+    .bg-card p {
+      margin-bottom: 0.9rem;
+    }
+
+    .bg-card .highlight-link {
+      background: #e8f5f8;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      color: #07555f;
+      white-space: nowrap;
+    }
+
+    /* 三段网格卡片 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0 2.4rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 6px 20px rgba(20, 100, 112, 0.06);
+      transition: transform 0.1s ease, box-shadow 0.2s;
+      border: 1px solid #dceff2;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(20, 100, 112, 0.12);
+    }
+
+    .card .emoji-badge {
+      display: inline-block;
+      background: #d9f0f3;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0a4b54;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: #2b4a54;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #e3f3f6;
+      color: #07555f;
+      font-size: 0.8rem;
+      border-radius: 30px;
+      padding: 0.1rem 0.8rem;
+      margin-top: 0.9rem;
+    }
+
+    /* 访问提示／FAQ 摘要 */
+    .tip-area {
+      background: white;
+      border-radius: 30px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 8px 22px rgba(16, 80, 88, 0.06);
+      margin: 2rem 0 2.8rem;
+      border: 1px solid #cfe2e6;
+    }
+
+    .tip-area h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #0a5d69;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #e4f0f3;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #144e58;
+      margin-bottom: 0.1rem;
+    }
+
+    .faq-a {
+      color: #3b5d69;
+      font-size: 0.95rem;
+    }
+
+    .tip-highlight {
+      background: #e2f1f4;
+      border-radius: 40px;
+      padding: 0.8rem 1.4rem;
+      margin-top: 1.2rem;
+      font-weight: 450;
+    }
+
+    .tip-highlight a {
+      color: #07555f;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #9cd2db;
+    }
+
+    /* 页尾 */
+    .footer-note {
+      text-align: center;
+      padding-top: 1.6rem;
+      border-top: 2px dashed #bfd9df;
+      color: #30606b;
+      font-size: 0.95rem;
+    }
+
+    .footer-note a {
+      color: #0b5f6b;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #8bc7d3;
+    }
+
+    .footer-note a:hover {
+      border-bottom-width: 3px;
+    }
+
+    /* 响应式 */
+    @media (min-width: 680px) {
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero {
+        padding: 3.6rem 3rem 4rem;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .bg-card, .tip-area {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>世界杯 2026<br>简明观赛指南</h1>
+    <div class="sub">从城市到球场，从赛程到门票——用生活化的节奏拥抱下届盛会。</div>
+    <div class="dot-grid">
+      <span>48 支队伍</span>
+      <span>16 座主办城</span>
+      <span>北美三国</span>
+      <span>2026 年夏天</span>
+    </div>
+  </div>
+
+  <!-- 背景说明 -->
+  <div class="bg-card">
+    <h2>关于这一届</h2>
+    <p>2026 年国际足联<span style="background:#d6edf2; padding:0 6px; border-radius:16px;">世界杯</span>将首次由美国、加拿大、墨西哥联合主办，也是扩军至 48 队后的首届。比赛从小组赛到决赛共 104 场，分布于西雅图、洛杉矶、墨西哥城、多伦多等 16 座城市。</p>
+    <p>对普通球迷来说，提前了解赛区分布、票务规则和签证信息，能让整趟旅程从容不少。下面几个要点可能正是你需要的。</p>
+  </div>
+
+  <!-- 三段式卡片 -->
+  <div class="feature-grid">
+    <div class="card">
+      <div class="emoji-badge">📍</div>
+      <h3>主场馆·节奏</h3>
+      <p>每个主办城市通常安排 4–6 场小组赛，淘汰赛场次则集中在大型体育场。建议以一到两个城市为据点，配合地面交通移动，感受不同北美国度的球迷氛围。</p>
+      <div class="tag">共 16 座场馆</div>
+    </div>
+    <div class="card">
+      <div class="emoji-badge">🎫</div>
+      <h3>票务与行程</h3>
+      <p>官方套票分阶段发售，提前登记 FIFA 账号可收到通知。除了比赛票，尽早规划住宿和跨城交通，热门时段价格会明显上浮。用公开的赛历做一张自己的日程表。</p>
+      <div class="tag">早鸟窗口优先</div>
+    </div>
+    <div class="card">
+      <div class="emoji-badge">🌎</div>
+      <h3>入境与沟通</h3>
+      <p>美国、加拿大均要求多数外国游客持有效签证或 eTA。墨西哥入境政策相对灵活。三地日常以英语、西班牙语为主，部分城市法语通用。提前下载离线地图和翻译应用。</p>
+      <div class="tag">出发前确认</div>
+    </div>
+  </div>
+
+  <!-- 访问提示 + FAQ 摘要 -->
+  <div class="tip-area">
+    <h3>📋 常见疑问 · 快速参考</h3>
+    <div class="faq-item">
+      <div class="faq-q">比赛日期确定了吗？</div>
+      <div class="faq-a">官方赛程已基本锁定，小组赛从 2026 年 6 月中旬开始，决赛定于 7 月 19 日。具体对阵及时间以 FIFA 最终公告为准。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">在哪里获取最可靠的信息？</div>
+      <div class="faq-a">国际足联的官方平台是首选。你可以在 <span class="highlight-link"><a href="https://fifa2026--app.com" style="text-decoration:none;color:inherit;font-weight:500;">世界杯</a></span> 的专用页面上找到赛程、票务入口和主办城市指南，信息持续更新。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">是否需要购买旅行保险？</div>
+      <div class="faq-a">虽非强制，但建议为跨境行程和贵重物品投保。北美医疗费用较高，旅行保险可以让你更安心地投入节日氛围。</div>
+    </div>
+
+    <div class="tip-highlight">
+      💡 如果你刚刚开始构思 2026 年的观赛计划，不妨先从 <a href="https://fifa2026--app.com">世界杯</a> 的官方频道了解主办城市介绍和票务阶段。一个轻松的起点比追求完美更重要。
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <div class="footer-note">
+    <p>杂志专题 · 2026 世界杯简明指南 — 信息基于公开资料整理，具体以官方发布为准。</p>
+    <p style="margin-top:0.4rem;">主页 · <a href="https://fifa2026--app.com">世界杯</a></p>
+  </div>
+
+</div>
+</body>
+</html>
