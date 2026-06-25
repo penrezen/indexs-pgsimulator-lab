@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于世界杯 · 持续关注的页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: #fafafa;
+            color: #1e1e1e;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* 顶部导航 — 极简线框 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0 0.8rem;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-brand {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #6a6a6a;
+            letter-spacing: 0.03em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: #3a3a3a;
+            text-decoration: none;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #111;
+            border-bottom-color: #111;
+        }
+
+        /* hero 区域 — 窄且留白 */
+        .hero {
+            margin-bottom: 3.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: #1c1c1c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #4b4b4b;
+            max-width: 90%;
+        }
+
+        /* 场景模块 */
+        .scene-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.8rem;
+            margin: 3rem 0 3.5rem;
+        }
+
+        .scene-item {
+            border-left: 3px solid #dadada;
+            padding-left: 1.5rem;
+        }
+
+        .scene-item h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #252525;
+        }
+
+        .scene-item p {
+            font-size: 0.95rem;
+            color: #4f4f4f;
+        }
+
+        .scene-item .meta {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 0.5rem;
+            letter-spacing: 0.04em;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-summary {
+            margin: 2.8rem 0 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #2b2b2b;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 480;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+            color: #222;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #5a5a5a;
+            padding-left: 0.2rem;
+        }
+
+        .faq-item .a a {
+            color: #2b2b2b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+        }
+
+        .faq-item .a a:hover {
+            color: #000;
+            text-decoration-color: #000;
+        }
+
+        /* 提示 / 脚标 */
+        .note-area {
+            font-size: 0.85rem;
+            color: #777;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #ececec;
+            margin-top: 2rem;
+        }
+
+        .note-area span {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 540px) {
+            .page {
+                padding: 1.5rem 1.2rem 3rem;
+            }
+
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                max-width: 100%;
+            }
+
+            .scene-item {
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 导航 -->
+    <nav class="top-nav">
+        <span class="nav-brand">⚽ 关注 · 2026</span>
+        <div class="nav-links">
+            <a href="#">再次访问</a>
+            <a href="#">收藏</a>
+            <a href="#">持续关注</a>
+        </div>
+    </nav>
+
+    <!-- hero 叙述 -->
+    <div class="hero">
+        <h1>回到同一个页面<br>关于那场赛事</h1>
+        <p>有时我们只是需要一个安静的位置，存放对下一届比赛的期待。这个页面不追赶资讯，不制造喧哗，只为了那些想从远处看着的人。</p>
+    </div>
+
+    <!-- 三个场景模块：再次访问 / 收藏 / 持续关注 -->
+    <div class="scene-grid">
+        <div class="scene-item">
+            <h2>再次访问 · 不必重新寻找</h2>
+            <p>也许你几周前打开过这个链接，当时粗略看了看，便关掉了标签页。今天又想起，于是回来。页面还在，内容没有变，但心情可能已经不同。</p>
+            <span class="meta">—— 书签栏里的坐标</span>
+        </div>
+        <div class="scene-item">
+            <h2>收藏 · 为了一个遥远的确认</h2>
+            <p>你把它放进收藏夹，未必每天看，但你知道它在那里。就像一张写着地址的便签：<a href="https://fifa2026--cn.com">世界杯</a>，一个可以反复回来的名字。收藏是安静的信任。</p>
+            <span class="meta">—— 列表里的一行字</span>
+        </div>
+        <div class="scene-item">
+            <h2>持续关注 · 不是每件事都需要即时</h2>
+            <p>有些关注的节奏是缓慢的：每隔几周点开一次，看看有没有新的碎片，或者只是确认页面仍然在线。没有推送，没有红点，只有你主动的注视。</p>
+            <span class="meta">—— 偶尔的到访</span>
+        </div>
+    </div>
+
+    <!-- 常见说明摘要 (FAQ) -->
+    <div class="faq-summary">
+        <h3>常见说明 · 几句你可能想问的</h3>
+
+        <div class="faq-item">
+            <div class="q">这个页面是关于什么的？</div>
+            <div class="a">一个围绕 <a href="https://fifa2026--cn.com">世界杯</a> 的轻量介绍页。它不提供实时比分或赛程，更多是作为一个可反复访问的锚点存在。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">为什么页面看起来很简单？</div>
+            <div class="a">有意为之。我们希望它接近一张纸的重量——没有弹窗、没有自动播放、没有复杂的交互。你来了，读几行，然后离开或收藏。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">我会错过重要信息吗？</div>
+            <div class="a">如果你需要即时新闻或官方公告，那里可能更适合你。这里只是另一种速度：慢一拍，但不会丢失。</div>
+        </div>
+    </div>
+
+    <!-- 结尾提示 -->
+    <div class="note-area">
+        <span>你可以随时关闭这个页面，它不会消失。</span>
+        <span>下次想回来时，地址栏里输入 fifa2026--cn.com 就好。</span>
+    </div>
+
+</div>
+</body>
+</html>
